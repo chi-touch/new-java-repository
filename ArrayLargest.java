@@ -26,16 +26,17 @@ public class ArrayLargest{
 
 	public static void main(String[] args){
 	int max(int array[]; int n);
-		int i;
+		
 		max = 0;
 
-		for (i = 0; i<n; i++){
-			if(array[i]>max)
+		for (int i = 0; i<n; i++){
+			if(array[i]>max){
 				max = array[i];
 
-}
-}
-	System.out.println(max);
-}
 
+			}
+	
+		}
+
+}
 }

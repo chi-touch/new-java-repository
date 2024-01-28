@@ -8,16 +8,17 @@ public class MBTI3{
 	System.out.println("What is your name");
 	String name = input.nextLine();
 
-String [] optionA = {"null", "A. Expend energy,enjoy groups","A. Interpret literally","A. Logical,thinking,questioning","A. Organizes,orderly","A. more outgoing, think out loud","A. practical, realistic, experiential","A. candid,straight forward, frank","A. plan,schedule","A. seek many tasks","A. Standard,usual,conventional","A. firm, tend to criticize, hold the line","A. regulated,structured","A. External, communicative, express yourself","A. Focus on here- and- now","A. Tough-minded,just","A. Preparation,plan ahead","A. Active, initiate","A. Facts, things, what is","A. Matter of fact, issue- oriented","A. Control,govern"};
+
+String [] questionsA = {"null", "A. Expend energy,enjoy groups","A. Interpret literally","A. Logical,thinking,questioning","A. Organizes,orderly","A. more outgoing, think out loud","A. practical, realistic, experiential","A. candid,straight forward, frank","A. plan,schedule","A. seek many tasks","A. Standard,usual,conventional","A. firm, tend to criticize, hold the line","A. regulated,structured","A. External, communicative, express yourself","A. Focus on here- and- now","A. Tough-minded,just","A. Preparation,plan ahead","A. Active, initiate","A. Facts, things, what is","A. Matter of fact, issue- oriented","A. Control,govern"};
 
 String [] optionB = {"null", "B. Conserve energy, enjoy oneo-on-one","B. Look for meaning and possibilities","B. Empathetic, feeling,accomodating","B. flexible,adaptable","B. More reserved, think to yourself","B. imaginative, innovative, theoretical","B. tactful,kind, encouraging","B. Unplanned, spontaneous","B. Seek private, solitary activitieees with quiet to concentrate","B. Different, novel,unique","B. Gentle,tend to appreciate, conciliate","B. Easy-going,live and let live","B. Internal, reticent, keep to yourself","B. Look to the future, gobal perpective,big picture","B. Tender- hearted,merciful","B. Go with the flow,adapt as you go","B. Reflective,delibrate","B. Ideas, dreams, what could be, philosphical", "B. Sensitive, people-oriented, compassionate","B. Latitude,freedom"};
 
-String[]ExtrovertedEvsIntrovertedI = new String[5];
-String[]SensingSvsIntuitiveN = new String[5];
-String[]ThinkingTvsFeelingF = new String[5];
-String[]JudgingJvsPerceptiveP = new String[5];
+String[]extrovertedEVsIntrovertedI = new String[5];
+String[]sensingSVsIntuitiveN = new String[5];
+String[]thinkingTVsFeelingF = new String[5];
+String[]judgingJVsPerceptiveP = new String[5];
 
-String result= input.nextLine();
+
 
 
 int count1 =0;
@@ -37,17 +38,17 @@ int checkA4 = 0;
 int checkB4 = 0;
 
 String[] highest = new String[4];
-String concantenate= " ";
+String concantenate= "";
 
-for(int i = 1; i< optionA.length; i++){
+for(int i = 1; i< questionsA.length; i++){
 
-System.out.printf("%7s								%s%n","A","B");
-System.out.printf("%s			%s%n" ,optionA[i], optionB[i]);
-result = input.next().toUpperCase();
+System.out.printf("%7s%60s%n","A","B");
+System.out.printf("%s			%s%n" ,questionsA[i], optionB[i]);
+String result = input.next().toUpperCase();
 
 
 	while(!result.equals("A") && !result.equals("B")){
-		System.out.printf("Expected A or B as Response%nI know this is an error, Please retry again		%s%n",optionA[i],optionB[i]);
+		System.out.printf("Expected A or B as Response%nI know this is an error, Please retry again		%s%n",questionsA[i],optionB[i]);
 		result = input.next().toUpperCase();
 
 	}
@@ -56,19 +57,19 @@ result = input.next().toUpperCase();
        System.out.println();
        if(i ==1 || i ==5 || i ==9 || i == 13 || i ==17){
            if(result.equals("A")){
-           ExtrovertedEvsIntrovertedI[count1] = optionA[i];
+           extrovertedEVsIntrovertedI[count1] = questionsA[i];
            count1++;
            checkA++;
            }
            else if(result.equals("B")){
-           ExtrovertedEvsIntrovertedI[count1] = optionB[i];
+           extrovertedEVsIntrovertedI[count1] = optionB[i];
            count1++;
            checkB++;
            }
         }
 	else if(i == 2 || i == 6||i ==10 || i == 14 || i == 18){
 	    if(result.equals("A")){
-	    SensingSvsIntuitiveN[count2] = optionA[i];
+	    SensingSvsIntuitiveN[count2] = questionsA[i];
 	    count2++;
 	    checkA2++;
 	    }
@@ -80,7 +81,7 @@ result = input.next().toUpperCase();
         }
 	else if(i == 3 || i ==7|| i ==11||i == 15|| i == 19){
 		if(result.equals("A")){
-		ThinkingTvsFeelingF[count3] = optionA[i];
+		ThinkingTvsFeelingF[count3] = questionsA[i];
 		count3++;
 		checkA3++;
 		}
@@ -92,7 +93,7 @@ result = input.next().toUpperCase();
 	}
 	else if(i == 4|| i ==8|| i == 12||i == 16|| i == 20){
 		if(result.equals("A")){
-		JudgingJvsPerceptiveP[count4] = optionA[i];
+		JudgingJvsPerceptiveP[count4] = questionsA[i];
 		count4++;
 		checkA4++;
 		}
@@ -107,20 +108,26 @@ result = input.next().toUpperCase();
       for(int counter = 0; counter < ExtrovertedEvsIntrovertedI.length;counter++){
       System.out.printf("%s%n", ExtrovertedEvsIntrovertedI[counter]);
     }
-      System.out.printf("Number of A selected: %d%nNumber of B selected: %d%n%n", checkA, checkB);
+      System.out.printf("Number of A selected: %d%nNumber of B selected: %d%n", checkA, checkB);
 
       for(int counter =0; counter < SensingSvsIntuitiveN.length; counter++){
       System.out.printf("%s%n", SensingSvsIntuitiveN[counter]);
      }
-       System.out.printf("Number of A selected: %d%n Number of B selected: %d%n%n", checkA2, checkB2);
+
+
+System.out.printf("Number of A selected: %d%n Number of B selected: %d%n", checkA2, checkB2);
 
       for(int count = 0; count < ThinkingTvsFeelingF.length; count++){
-      System.out.printf("%s%n", ThinkingTvsFeelingF[count]);
+        System.out.printf("%s%n", ThinkingTvsFeelingF[count]);
       }
-       System.out.printf("Number of A selected: %d%n Number of B selected: %d%n%n", checkA3, checkB3);
+
+       System.out.printf("Number of A selected: %d%n Number of B selected: %d%n", checkA3, checkB3);
+
        for(int count = 0; count < JudgingJvsPerceptiveP.length;count++){
+
        System.out.printf("%s%n",JudgingJvsPerceptiveP[count]);
        }
+
        System.out.printf("Number of A selected: %d%nNumber of B selected: %d%n%n", checkA4, checkB4);
 
 	if(checkA > checkB){

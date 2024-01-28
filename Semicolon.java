@@ -10,6 +10,9 @@ public class Semicolon{
 
 	public static Scanner input = new Scanner(System.in);
 	public static String cashierName;
+
+
+
 	public static double total;
 
 	public static double customerPayment;
@@ -153,7 +156,8 @@ public class Semicolon{
 		double subTotal = subTotal();
 		double finalDiscount= discount;
 		double vat = VAT();
-		double finalBill = subTotal + finalDiscount + vat;
+		double finalBill = subTotal
+ + finalDiscount + vat;
 
 		return finalBill;
            }

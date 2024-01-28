@@ -10,6 +10,7 @@ public class CreditCardValidator{
 	//.startWith
 
 	//System.out.println("Credit Card Number is:"+ digit);
+
 	int total = 0;
 	int[] cardNumber = new int[digit.length()];
 
@@ -77,7 +78,6 @@ public class CreditCardValidator{
 	}
 	System.out.println("**Credit Card Number is:"+ digit);
 	System.out.println("**Credit Card Digit Length:"+ cardNumber.length);
-	System.out.println("**Credit Card Validity Status: invalid");
 	System.out.println("***************************************");
 
 }
